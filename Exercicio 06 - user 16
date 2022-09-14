@@ -1,0 +1,18 @@
+6) Efetuar a leitura de um determinado valor e apresentá-lo, caso não seja maior que três.
+
+REPORT zz_exerc06_16.
+
+
+
+PARAMETER p_valor1 TYPE n LENGTH 1.
+
+DATA v_valor2 TYPE n VALUE 3.
+
+IF p_valor1 LE v_valor2.
+
+  WRITE: / 'valor: ' , p_valor1, 'é menor ou igual á:' , v_valor2.
+
+ELSE.
+  MESSAGE: 'Valor escolhido é maior que: 3 ' TYPE 'I' .
+
+ENDIF.
