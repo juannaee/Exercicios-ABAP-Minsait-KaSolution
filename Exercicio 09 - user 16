@@ -1,0 +1,32 @@
+9) Faça um algoritmo que leia a altura e o sexo de uma pessoa, calcule e mostre seu peso
+ideal. Sabendo que:
+a. Para homens: (72,7 * h) -58
+b.
+Para mulheres (62,1 * h) - 44,7
+
+REPORT zz_exerc09_16.
+
+
+
+PARAMETERS: p_altura TYPE p LENGTH 4 DECIMALS 2,
+            p_sexo   TYPE bu_sexid. "Elemento de tabela uma  Standart que tem a opção 1-Masculino 2-Feminino"
+
+DATA: v_pesoideal TYPE p LENGTH 4 DECIMALS 2.
+
+
+IF p_sexo EQ 2.
+
+  v_pesoideal = ( 73 * p_altura ) - 58.
+
+  WRITE: /  'Sexo : masculino' ,
+         /  'Peso ideal: ' , v_pesoideal.
+
+ELSEIF p_sexo EQ 1.
+
+  v_pesoideal = ( 62 * p_altura ) - 45.
+
+  WRITE:/  'Sexo : Feminino' ,
+        /  'Peso ideal' , v_pesoideal .
+
+
+ENDIF.
