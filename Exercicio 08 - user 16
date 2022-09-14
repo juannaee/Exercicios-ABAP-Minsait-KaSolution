@@ -1,0 +1,18 @@
+8) Ler um número inteiro e apresentar uma mensagem informando se o número é par ou
+Impar. 
+
+REPORT ZZ_EXERC08_16.
+
+
+
+  PARAMETER p_valor type i LENGTH 2.
+
+IF p_valor MOD 2 EQ 0.
+
+    MESSAGE 'Valor par' type 'I'.
+
+ELSE.
+
+   MESSAGE 'Valor impar' type 'I'.
+
+ENDIF.
