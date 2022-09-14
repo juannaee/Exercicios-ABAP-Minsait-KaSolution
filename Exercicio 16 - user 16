@@ -1,0 +1,33 @@
+16)Desenvolver um algoritmo que efetue a soma de todos os números ímpares que são
+múltiplos de três e que se encontram no conjunto dos números de 1 até 500.
+17. Escrever um algoritmo que gera e escreve os números ímpares entre 100 e 200.
+
+REPORT zz_exerc16_16.
+
+DATA: v_numb      TYPE i VALUE IS INITIAL,
+      v_increment TYPE i VALUE IS INITIAL.
+
+
+
+DO.
+
+  v_increment = v_increment + 1.
+
+  IF v_increment MOD 2 NE 0 AND v_increment MOD 3 EQ 0.
+
+
+    v_numb = v_numb + v_increment.
+
+  ENDIF.
+
+  IF v_increment EQ 1.
+
+    EXIT.
+
+
+  ENDIF.
+
+
+ENDDO.
+
+WRITE: / 'Soma de todos os numeros de 1 a 500 impares e multiplos de 3: ' , v_numb.
