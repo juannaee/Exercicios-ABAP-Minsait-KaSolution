@@ -1,0 +1,55 @@
+2) Considerando  A=3, B= 2 ,C=5 determine como Verdadeiro ou Falso.
+↓
+(A >= B) AND (C<>5)
+(B<A) OR (A=3)
+(A>B) OR (A=3)
+(C<= 7) AND (B>0) AND (C>A)
+
+REPORT zz_exerc02_16.
+
+DATA: a TYPE n VALUE 3,
+      b TYPE n VALUE 2,
+      c TYPE n VALUE 5.
+
+IF a GT b.
+  WRITE: / 'Verdadeiro'.
+ELSE.
+  WRITE: / 'Falso'.
+ENDIF.
+IF b EQ a.
+  WRITE: / 'verdadeiro'.
+
+ELSE.
+  WRITE: / 'falso'.
+ENDIF.
+
+IF a GE b AND c NE 5.
+
+  WRITE: / 'verdadeiro'.
+
+ELSE.
+  WRITE: / 'falso'.
+ENDIF.
+
+
+IF b LT a OR a = 3.
+  WRITE: / 'verdadeiro'.
+
+ELSE.
+  WRITE: / 'falso'.
+ENDIF.
+
+IF a GT b OR a = 3.
+
+  WRITE: / 'verdadeiro'.
+
+ELSE.
+  WRITE: / 'falso'.
+ENDIF.
+
+IF c LE 7 AND b GT 0 AND c GT a.
+  WRITE: / 'verdadeiro'.
+
+ELSE.
+  WRITE: / 'falso'.
+ENDIF.
