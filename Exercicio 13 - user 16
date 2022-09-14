@@ -1,0 +1,27 @@
+13) Construir um algoritmo que leia um número inteiro maior que zero e imprima a
+seqüência: 1, 2, 4, 8, 16, 32,... (múltiplos de 2) enquanto o valor for menor ou igual ao valor
+lido.
+Exemplo:
+Valor lido: 82
+Sequência impressa: 1, 2, 4, 8, 16, 32, 64
+
+REPORT zz_exerc13_16.
+
+PARAMETERS p_numb TYPE i.
+DATA: v_increment TYPE i VALUE 2,
+      v_numb      TYPE i VALUE 1.
+
+
+DO p_numb TIMES.
+
+  v_numb  = v_numb * v_increment.
+
+  IF v_numb GE p_numb .
+
+    EXIT.
+
+  ENDIF.
+
+  WRITE v_numb.
+
+ENDDO.
