@@ -1,0 +1,17 @@
+7) Ler dois valores inteiros distintos e apresentar o maior dos dois números.
+
+REPORT zz_exerc07_16.
+
+
+
+PARAMETERS: p_valor1 TYPE i LENGTH 2,
+            p_valor2 TYPE i LENGTH 2.
+
+IF p_valor1 GT p_valor2 .
+
+  WRITE: / 'Maior Valor:' ,  p_valor1.
+
+ELSE.
+  WRITE: / 'Maior Valor:' , p_valor2.
+
+ENDIF.
