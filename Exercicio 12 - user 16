@@ -1,0 +1,17 @@
+12) Faça um algoritmo que apresente os resultados de uma tabuada para um número
+qualquer informado pelo usuário.
+
+REPORT ZZ_EXERC12_16.
+
+PARAMETERS p_numb type i.
+data v_tab type i value IS INITIAL.
+data v_result type i.
+
+DO 10 TIMES.
+
+ v_tab = v_tab + 1.
+v_result = p_numb * v_tab.
+
+write: / p_numb , 'x' , v_tab , '=' , v_result.
+
+ENDDO.
