@@ -1,0 +1,56 @@
+10) Faça um algoritmo para realizar as operações matemáticas de soma, subtração,
+divisão, multiplicação e resto. O algoritmo deve ler dois operandos e o sinal correspondente
+à operação desejada, no final deve ser impresso o resultado.
+
+REPORT zz_exerc10_16.
+
+DATA v_result TYPE i.
+
+
+PARAMETERS:
+  p_numb1 TYPE i,
+  p_numb2 TYPE i,
+  p_add   RADIOBUTTON GROUP oprd,
+  p_subtr RADIOBUTTON GROUP oprd,
+  p_mult  RADIOBUTTON GROUP oprd,
+  p_div   RADIOBUTTON GROUP oprd,
+  p_divs  RADIOBUTTON GROUP oprd,
+  p_mod   RADIOBUTTON GROUP oprd.
+
+IF p_add EQ 'X'.
+
+  v_result = p_numb1 + p_numb2.
+
+ENDIF.
+
+IF p_subtr EQ 'X'.
+
+  v_result = p_numb1 - p_numb2.
+
+ENDIF.
+
+IF p_mult EQ 'X' .
+
+  v_result = p_numb1 * p_numb2.
+
+ENDIF.
+
+IF p_div EQ 'X'.
+
+  v_result = p_numb1 DIV p_numb2.
+
+ENDIF.
+
+IF p_divs EQ 'X'.
+
+  v_result = p_numb1 / p_numb2.
+
+ENDIF.
+
+IF p_mod EQ 'X'.
+
+  v_result = p_numb1 MOD p_numb2.
+
+ENDIF.
+
+WRITE: / 'Resultado: ' , v_result.
