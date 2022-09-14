@@ -1,0 +1,14 @@
+3) Construir um algoritmo que calcule a área de um triângulo. (at= (altura*base) / 2)
+
+REPORT zz_exerc03_16.
+
+
+PARAMETERS:
+  p_altura TYPE p  LENGTH 5   DECIMALS 2,
+  p_base   TYPE p  LENGTH 5   DECIMALS 2.
+
+
+DATA v_result TYPE p  LENGTH 10  DECIMALS 2.
+v_result = ( p_altura * p_base ) / 2.
+
+WRITE: 'A area do triangulo é: ' , v_result.
