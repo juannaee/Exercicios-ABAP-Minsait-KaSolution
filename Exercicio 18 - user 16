@@ -1,0 +1,60 @@
+18) A jornada de trabalho semanal de um funcionário é de 40 horas. O funcionário que
+trabalhar mais de 40 horas receberá hora extra, cujo cálculo é o valor da hora regular com um
+acréscimo de 50%. Escreva um algoritmo que leia o número de horas trabalhadas em um
+mês, o salário por hora e escreva o salário total do funcionário, que deverá ser acrescido das
+horas extras, caso tenham sido trabalhadas (considere que o mês possua 4 semanas exatas).
+
+18) 
+
+REPORT zz_exerc18_16.
+
+
+*Variaveis
+SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE text-001.
+
+DATA: v_hrsem  TYPE i VALUE 40, "Trabalha 160 horas em uma semana
+      v_extra  TYPE p LENGTH 5 DECIMALS 3, "Valor extra
+      v_salbrt TYPE p LENGTH 5 DECIMALS 3. "salario sem aumento.
+
+SELECTION-SCREEN END OF BLOCK b1.
+
+*Parametros.
+SELECTION-SCREEN BEGIN OF BLOCK b2 WITH FRAME TITLE text-002.
+
+PARAMETERS:
+  p_hrtrab TYPE i,  "horas trabalhadas em um mês
+  p_salhr  TYPE p LENGTH 5 DECIMALS 3. "salario por hora.
+SELECTION-SCREEN END OF BLOCK b2.
+
+*Calculos primarios de parametros e variaveis.
+SELECTION-SCREEN BEGIN OF BLOCK b3 WITH FRAME TITLE text-003.
+
+p_salhr = p_salhr * p_hrtrab. "salario total
+v_salbrt = p_salhr.
+
+SELECTION-SCREEN END OF BLOCK b3.
+
+*Verificação se teve ou não horas extras e calculos secundarios de parametros e variaveis.
+SELECTION-SCREEN BEGIN OF BLOCK b4 WITH FRAME TITLE text-004.
+
+IF p_hrtrab DIV 4 GT 40. "Se horas trabalhadas dividida por 4 for maior que 40 ele recebe um aumento.
+
+  v_extra = p_salhr * ( 50 / 100 ).
+  p_salhr = p_salhr + v_extra.  "salario com aumento.
+
+  WRITE:
+  / ' total de horas trabalhadas :',  p_hrtrab ,
+  / 'Você teve horas extras!',
+  / 'salario: ' , v_salbrt,
+  / 'Seu salario com o aumento é: ' , p_salhr.
+
+ELSE. "caso não tenha horas extras.
+
+  WRITE: ' total de horas trabalhadas:',  p_hrtrab,
+  / 'Voce não teve hora extra! ',
+  / 'Seu salario é: ' , v_salbrt.
+
+ENDIF.
+
+SELECTION-SCREEN END OF BLOCK b4.
+
