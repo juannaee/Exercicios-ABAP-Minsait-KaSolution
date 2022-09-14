@@ -1,0 +1,40 @@
+14) Faça um algoritmo que leia dois números inteiros e imprima duas sequências:
+a.A primeira sequência vai do menor número até o maior número.
+b.E a segunda sequência vai do maior número até o menor número.
+
+14)
+
+REPORT zz_exerc14_16.
+DATA: v_maior     TYPE i,
+      v_menor     TYPE i,
+      v_contador1 TYPE i,
+      v_contador2 TYPE i.
+
+PARAMETERS:
+  p_valor1 TYPE i,
+  p_valor2 TYPE i.
+
+IF p_valor1 GT p_valor2.
+  v_maior = p_valor1.
+  v_menor = p_valor2.
+
+ELSE.
+  v_maior = p_valor2.  v_menor = p_valor1.
+
+ENDIF.
+
+v_contador1 = v_menor.
+v_contador2 = v_maior.
+
+
+WHILE v_contador1 LE v_maior.
+  WRITE: / 'menor para maior ', v_contador1.
+  v_contador1 = v_contador1 + 1.
+ENDWHILE.
+
+WRITE: / '---------------------------------------------------'.
+
+WHILE v_contador2 GE v_menor.
+  WRITE: / 'maior para menor ' , v_contador2.
+  v_contador2 = v_contador2 - 1.
+ENDWHILE.
