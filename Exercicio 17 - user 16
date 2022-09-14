@@ -1,0 +1,28 @@
+17)Escrever um algoritmo que gera e escreve os números impares entre 100 e 200.
+
+REPORT zz_exerc17_16.
+
+DATA: v_numb      TYPE i VALUE 100.
+
+
+
+DO.
+
+  v_numb  =  v_numb   + 1.
+
+  IF v_numb MOD 2 NE 0.
+
+    WRITE: / 'Numeros impares' , v_numb.
+
+
+  ENDIF.
+
+  IF v_numb EQ 200.
+
+    EXIT.
+
+
+  ENDIF.
+
+
+ENDDO.
