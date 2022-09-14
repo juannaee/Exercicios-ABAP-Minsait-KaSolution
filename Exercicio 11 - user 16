@@ -1,0 +1,30 @@
+11) Faça um algoritmo que imprima a seguinte sequência: 1, 2, 3, 4, 5,
+100
+
+REPORT zz_exerc11_16.
+
+DATA v_numb TYPE i        VALUE IS INITIAL.
+
+
+*Fiz de duas formas usando o sy-index
+*determinando a parte inteira ate centenas.
+
+DO.
+  WRITE: / 'usando sy-index :' , (3) sy-index.
+
+  IF sy-index = 100.
+    EXIT.
+  ENDIF.
+
+ENDDO.
+
+WRITE: / '--------------------------------------------------'.
+
+*E também fiz sem o usar o sy-index.
+DO 100 TIMES.
+
+  v_numb = v_numb + 1.
+
+  WRITE: / 'sem usar sy-index ' ,  v_numb.
+
+ENDDO.
