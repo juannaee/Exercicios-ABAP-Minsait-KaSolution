@@ -1,0 +1,22 @@
+4) Construir um algoritmo que leia quatro notas e imprima a média aritmética do aluno.
+
+
+
+REPORT zz_exerc04_16.
+
+
+PARAMETERS: p_nota1 TYPE n LENGTH 5,
+            p_nota2 TYPE n LENGTH 5,
+            p_nota3 TYPE n LENGTH 5,
+            p_nota4 TYPE n LENGTH 5.
+
+
+
+data: v_total     type p LENGTH 10 DECIMALS 2,
+      v_media     type p LENGTH 10 DECIMALS 2.
+
+v_total = p_nota1 + p_nota2 + p_nota3 + p_nota4.
+v_media =  v_total / 4.
+
+WRITE: / 'O seu total de notas foi: ' , v_total,
+       / 'Sua media foi: '            , v_media.
