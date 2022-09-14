@@ -1,0 +1,24 @@
+5) Construir um algoritmo que leia o ano de nascimento de uma pessoa e o ano atual,
+calcule e mostre:
+A idade dessa pessoa;
+Quantos anos essa pessoa terá em 2015
+
+
+REPORT ZZ_EXERC05_16.
+
+
+
+ PARAMETERS: p_ano       type n LENGTH 4, "Ano nascimento. 
+             p_anoAt type  n LENGTH  4.    "ano atual ou desejado.
+
+
+  data: v_idadeAt    type n LENGTH 2,
+        v_idadeFut   type n LENGTH 2.
+
+v_idadeAt  =  p_anoAt - p_ano.
+v_idadefut =  p_ano - 2015.
+
+WRITE: / 'Sua idade atual é: '   , v_idadeAt ,
+       / 'Sua idade em 2015 é: ' , v_idadefut.
+       
+       
