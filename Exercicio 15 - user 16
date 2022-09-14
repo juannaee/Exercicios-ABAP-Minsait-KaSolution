@@ -1,0 +1,109 @@
+15) Faça um algoritmo que receba 5 números inteiros positivos, calcule e mostre:
+A soma dos números digitados
+A média dos números digitados
+O maior número digitado
+O menor número digitado
+A média dos números pares
+
+REPORT zz_exerc15_16.
+
+PARAMETERS: p_valor1 TYPE i,
+            p_valor2 TYPE i,
+            p_valor3 TYPE i,
+            p_valor4 TYPE i,
+            p_valor5 TYPE i.
+
+DATA:       v_soma       TYPE i,
+            v_media      TYPE p LENGTH 4 DECIMALS 1,
+            v_mediapares TYPE p LENGTH 4 DECIMALS 1,
+            v_maiornumb  TYPE i,
+            v_menornumb  TYPE i,
+            v_totalpares TYPE i.
+
+*Maior numero.
+SELECTION-SCREEN BEGIN OF BLOCK b1 WITH FRAME TITLE text-001.
+IF p_valor1 GE  p_valor2 AND p_valor1 GE p_valor3 AND p_valor1 GE p_valor4 AND p_valor1 GE p_valor5 .
+  WRITE: / 'Maior numero:' , p_valor1.
+
+ELSEIF  p_valor2 GE  p_valor1 AND p_valor2 GE p_valor3 AND p_valor2 GE p_valor4 AND p_valor2 GE p_valor5 .
+  WRITE: / 'Maior numero:' , p_valor2.
+
+ELSEIF p_valor3 GE  p_valor1 AND p_valor3 GE p_valor2 AND p_valor3 GE p_valor4 AND p_valor3 GT p_valor5 .
+  WRITE: / 'Maior numero:' , p_valor3.
+
+ELSEIF p_valor4 GE  p_valor1 AND p_valor4 GE p_valor2 AND p_valor4 GE p_valor3 AND p_valor4 GE p_valor5 .
+  WRITE: / 'Maior numero:' , p_valor4.
+
+ELSEIF p_valor5 GE  p_valor1 AND p_valor5 GE p_valor2 AND p_valor5 GE p_valor3 AND p_valor5 GE p_valor4 .
+  WRITE: / 'Maior numero:' , p_valor5.
+ENDIF.
+SELECTION-SCREEN END OF BLOCK b1.
+
+*Menor Numero.
+SELECTION-SCREEN BEGIN OF BLOCK b2 WITH FRAME TITLE text-002.
+IF p_valor1 LE  p_valor2 AND p_valor1 LE p_valor3 AND p_valor1 LE p_valor4 AND p_valor1 LE p_valor5 .
+  WRITE: / 'Menor numero:' , p_valor1.
+
+ELSEIF  p_valor2 LE  p_valor1 AND p_valor2 LE p_valor3 AND p_valor2 LE p_valor4 AND p_valor2 LE p_valor5 .
+  WRITE: / 'Menor numero:' , p_valor2.
+
+ELSEIF p_valor3 LE  p_valor1 AND p_valor3 LE p_valor2 AND p_valor3 LE p_valor4 AND p_valor3 LE p_valor5 .
+  WRITE: / 'Menor numero:' , p_valor3.
+
+ELSEIF p_valor4 LE  p_valor1 AND p_valor4 LE p_valor2 AND p_valor4 LE p_valor3 AND p_valor4 LE p_valor5 .
+  WRITE: / 'Menor numero:' , p_valor4.
+
+ELSEIF p_valor5 LE p_valor1 AND p_valor5 LE p_valor2 AND p_valor5 LE p_valor3 AND p_valor5 LE p_valor4 .
+  WRITE: / 'Menor numero:' , p_valor5.
+ENDIF.
+SELECTION-SCREEN END OF BLOCK b2.
+
+*soma dos numeros.
+SELECTION-SCREEN BEGIN OF BLOCK b3 WITH FRAME TITLE text-003.
+
+v_soma = p_valor1 + p_valor2 + p_valor3 + p_valor4 + p_valor5.
+WRITE: / 'Soma dos numeros: ' , v_soma.
+
+SELECTION-SCREEN END OF BLOCK b3.
+
+*Media dos numeros.
+SELECTION-SCREEN BEGIN OF BLOCK b4 WITH FRAME TITLE text-004.
+
+v_media = v_soma / 5.
+WRITE: / 'Media dos numeros: ' , v_media.
+
+SELECTION-SCREEN END OF BLOCK b4.
+
+*Media dos numeros pares
+SELECTION-SCREEN BEGIN OF BLOCK b5 WITH FRAME TITLE text-005.
+
+IF p_valor1  MOD 2 EQ 0.
+
+  v_totalpares  = v_totalpares + p_valor1.
+ENDIF.
+
+IF p_valor2  MOD 2 EQ 0.
+
+  v_totalpares   = v_totalpares + p_valor2.
+ENDIF.
+
+IF p_valor3 MOD 2 EQ 0.
+  v_totalpares   = v_totalpares + p_valor3.
+ENDIF.
+
+IF p_valor4  MOD 2 EQ 0.
+  v_totalpares  = v_totalpares + p_valor4.
+ENDIF.
+
+IF p_valor5  MOD 2 EQ 0.
+  v_totalpares  = v_totalpares + p_valor5.
+
+
+ENDIF.
+
+v_mediapares = v_totalpares / 5.
+WRITE: / 'Media dos numeros pares: ' , v_mediapares .
+
+
+
+SELECTION-SCREEN END OF BLOCK b5.
